@@ -25,7 +25,7 @@ public class BeanFactoryTest {
 
     @BeforeEach
     @SuppressWarnings("unchecked")
-    public void setup() {
+    public void setup() throws NoSuchMethodException {
         reflections = new Reflections("nextstep.di.factory.example");
         Set<Class<?>> preInstanticateClazz = getTypesAnnotatedWith(Controller.class, Service.class, Repository.class);
         beanFactory = new BeanFactory(preInstanticateClazz);
